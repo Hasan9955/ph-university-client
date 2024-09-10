@@ -1,10 +1,9 @@
-import React from 'react';
-// import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Button, Layout } from 'antd'; 
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import { useAppDispatch } from '../../redux/features/hooks';
 import { logout } from '../../redux/features/auth/authSlice';
+import { toast } from 'sonner';
+import { useAppDispatch } from '../../redux/hooks';
 const { Header, Content, Footer } = Layout;
 
  
@@ -14,6 +13,7 @@ const MainLayout: React.FC = () => {
 
     const handleLogout = () => {
         dispatch(logout())
+        toast.error('Logout successfully!', {duration: 2000})
     }
     return (
         <Layout style={{ height: '100vh' }}>

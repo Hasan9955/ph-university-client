@@ -6,10 +6,6 @@ import { routesGenerator } from "../utils/routesGenerator";
 import { adminPaths } from "./adminRoutes";
 import { facultyPaths } from "./facultyRoutes";
 import { studentPaths } from "./studentRoutes";
-import AdminDashboard from "../Pages/admin/AdminDashboard";
-import FacultyDashboard from "../Pages/faculty/FacultyDashboard";
-import StudentDashboard from "../Pages/student/StudentDashboard";
-
 
 
 const router = createBrowserRouter([
@@ -19,17 +15,17 @@ const router = createBrowserRouter([
     },
     {
         path: '/admin',
-        element: <AdminDashboard />,
+        element: <App />,
         children: routesGenerator(adminPaths)
     },
     {
         path: '/faculty',
-        element: <FacultyDashboard />,
+        element: <App />,
         children: routesGenerator(facultyPaths)
     },
     {
         path: '/student',
-        element: <StudentDashboard />,
+        element: <App />,
         children: routesGenerator(studentPaths)
     },
     {
